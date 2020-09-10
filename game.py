@@ -6,19 +6,25 @@ numeroSorteado = random.randrange(0, 100)
 letras = "abcdefghijklmnopqrstuvxz"
 
 print("Jogo de Adivinhação\n")
-print("Sorteando número... Número sorteado!!!")
 
-numeroDigitado = input("Digite seu número para tentar adivinhar qual número foi sorteado: ")
-while numeroDigitado not in numeros:
-    numeroDigitado = input("Digite seu número para tentar adivinhar qual número foi sorteado: ")
+nome = input("Primeiro, nos diga seu nome: ")
 
+print(nome + " estamos sorteando o número... Número sorteado!!!")
+
+numeroDigitado = input(
+    "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+while numeroDigitado in letras:
+    numeroDigitado = input(
+        "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+
+numeroDigitado = int(numeroDigitado)
 
 while numeroDigitado != numeroSorteado:
     os.system("cls")
     if numeroSorteado > numeroDigitado:
-        print("O número sorteado é maior...")
+        print("\tO número sorteado é maior...")
     elif numeroSorteado < numeroDigitado:
-        print("O número sorteado é menor...")
+        print("\tO número sorteado é menor...")
     tentativas += 1
     numeroDigitado = int(input("Digite seu número: \n"))
 
