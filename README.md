@@ -1,2 +1,2 @@
-# guessing-game-py
+# Guessing Game
 :snake: Python Guessing Game
