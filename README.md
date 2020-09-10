@@ -1,5 +1,5 @@
-# Guessing Game
+# Jogo de Adivinhação
 
-## :snake: Jogo de Adivinhação em Python
+## :snake: Descrição
 
 O jogo consiste em tentar adivinhar qual o número foi sorteado pela máquina...

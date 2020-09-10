@@ -5,6 +5,7 @@ tentativas = 0
 numeroSorteado = random.randrange(0, 100)
 letras = "abcdefghijklmnopqrstuvxz"
 
+os.system("CLS")
 print("Jogo de Adivinhação\n")
 
 nome = input("Primeiro, nos diga seu nome: ")
@@ -26,7 +27,7 @@ while numeroDigitado != numeroSorteado:
     elif numeroSorteado < numeroDigitado:
         print("\tO número sorteado é menor...")
     tentativas += 1
-    numeroDigitado = int(input("Digite seu número: \n"))
+    numeroDigitado = int(input("Digite outro número: \n"))
 
-print("Número: " + str(numeroDigitado) + ", você precisou de " +
+print("\nNúmero: " + str(numeroDigitado) + ", você precisou de " +
       str(tentativas + 1) + " tentativas.")
