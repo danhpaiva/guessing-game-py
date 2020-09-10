@@ -5,9 +5,6 @@
 <p align="center">
   <img src="https://i.imgur.com/TLRCbVr.png">
 </p>
-<p align="center">
-  <img src="https://i.imgur.com/r9eCqmS.png">
-</p>
 
 O jogo consiste em tentar adivinhar qual o número foi sorteado pela máquina.
 
