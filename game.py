@@ -1,6 +1,6 @@
 import os
 import random
-
+# https://fsymbols.com/generators/carty/
 
 def introducePlayer():
     os.system("cls")
