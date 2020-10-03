@@ -42,7 +42,7 @@ def searchNumber():
     print("\nNúmero: " + str(selectedNumber) +
           ", você precisou de " + str(attemps) + " tentativas.")
 
-    retry = int(input('\nGostaria de sortear um novo número: [1]Sim [2]Não'))
+    retry = int(input('\nGostaria de sortear um novo número: [1]Sim [2]Não: '))
     if retry == 1:
         searchNumber()
     else:
