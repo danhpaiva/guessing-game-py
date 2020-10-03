@@ -1,35 +1,37 @@
 import os
 import random
 
-numeroSorteado = random.randrange(0, 100)
 
-def introducePlayer():
+def introducePlayer(playerName):
     os.system("cls")
     print("Jogo de Adivinhação\n")
-    nome = input("Primeiro, nos diga seu nome: ")
-    print(nome + " estamos sorteando o número... Número sorteado!!!")
+    print(playerName + " estamos sorteando o número... Número sorteado!!!")
 
-def getTipAboutSelectedNumber(numeroSorteado, numeroDigitado):
-    if numeroSorteado > numeroDigitado:
+def getTipAboutSelectedNumber(randomNumber, selectedNumber):
+    if randomNumber > selectedNumber:
         print("\tO número sorteado é maior...")
-    elif numeroSorteado < numeroDigitado:
+    elif randomNumber < selectedNumber:
         print("\tO número sorteado é menor...")
 
-def searchNumber(numeroDigitado):
-    tentativas = 0
+def searchNumber():
+    attemps = 1
+    selectedNumber = input("Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+    randomNumber = random.randrange(0, 100)
 
-    while numeroDigitado != numeroSorteado:
+    while selectedNumber != randomNumber:
         os.system("cls")
-        if not numeroDigitado.isnumeric():
-            numeroDigitado = input("Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+        if not selectedNumber.isnumeric():
+            selectedNumber = input("Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+        getTipAboutSelectedNumber(randomNumber, int(selectedNumber))
+        selectedNumber = input("Digite outro número: \n")
+        attemps += 1
+    print("\nNúmero: " + str(selectedNumber) + ", você precisou de " + str(attemps) + " tentativas.")
 
-        getTipAboutSelectedNumber(numeroSorteado, int(numeroDigitado))
-        numeroDigitado = input("Digite outro número: \n")
-        tentativas += 1
+def main():
+    introducePlayer(input("Primeiro, nos diga seu nome: "))
+    searchNumber()
 
-    print("\nNúmero: " + str(numeroDigitado) + ", você precisou de " + str(tentativas + 1) + " tentativas.")
-
-introducePlayer()
-searchNumber(input("Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: "))
+if __name__ == "__main__":
+    main()
 
 
