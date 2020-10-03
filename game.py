@@ -1,33 +1,44 @@
 import os
 import random
 
-tentativas = 0
-numeroSorteado = random.randrange(0, 100)
-letras = "abcdefghijklmnopqrstuvxz"
 
-os.system("CLS")
-print("Jogo de Adivinhação\n")
-
-nome = input("Primeiro, nos diga seu nome: ")
-
-print(nome + " estamos sorteando o número... Número sorteado!!!")
-
-numeroDigitado = input(
-    "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
-while numeroDigitado in letras:
-    numeroDigitado = input(
-        "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
-
-numeroDigitado = int(numeroDigitado)
-
-while numeroDigitado != numeroSorteado:
+def introducePlayer():
     os.system("cls")
-    if numeroSorteado > numeroDigitado:
-        print("\tO número sorteado é maior...")
-    elif numeroSorteado < numeroDigitado:
-        print("\tO número sorteado é menor...")
-    tentativas += 1
-    numeroDigitado = int(input("Digite outro número: \n"))
+    print(r"""
+    ░██████╗░██╗░░░██╗███████╗███████╗░██████╗██╗███╗░░██╗░██████╗░  ░██████╗░░█████╗░███╗░░░███╗███████╗
+    ██╔════╝░██║░░░██║██╔════╝██╔════╝██╔════╝██║████╗░██║██╔════╝░  ██╔════╝░██╔══██╗████╗░████║██╔════╝
+    ██║░░██╗░██║░░░██║█████╗░░█████╗░░╚█████╗░██║██╔██╗██║██║░░██╗░  ██║░░██╗░███████║██╔████╔██║█████╗░░
+    ██║░░╚██╗██║░░░██║██╔══╝░░██╔══╝░░░╚═══██╗██║██║╚████║██║░░╚██╗  ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░
+    ╚██████╔╝╚██████╔╝███████╗███████╗██████╔╝██║██║░╚███║╚██████╔╝  ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗
+    ░╚═════╝░░╚═════╝░╚══════╝╚══════╝╚═════╝░╚═╝╚═╝░░╚══╝░╚═════╝░  ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝
+    """)
+    print(input("Primeiro, nos diga seu nome: ") + " estamos sorteando o número... Número sorteado!!!")
 
-print("\nNúmero: " + str(numeroDigitado) + ", você precisou de " +
-      str(tentativas + 1) + " tentativas.")
+def getTipAboutSelectedNumber(randomNumber, selectedNumber):
+    if randomNumber > selectedNumber:
+        print("\tO número sorteado é maior...")
+    elif randomNumber < selectedNumber:
+        print("\tO número sorteado é menor...")
+
+def searchNumber():
+    attemps = 1
+    selectedNumber = input("Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+    randomNumber = random.randrange(0, 100)
+
+    while selectedNumber != randomNumber:
+        os.system("cls")
+        if not selectedNumber.isnumeric():
+            selectedNumber = input("Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+        getTipAboutSelectedNumber(randomNumber, int(selectedNumber))
+        selectedNumber = input("Digite outro número: \n")
+        attemps += 1
+    print("\nNúmero: " + str(selectedNumber) + ", você precisou de " + str(attemps) + " tentativas.")
+
+def main():
+    introducePlayer()
+    searchNumber()
+
+if __name__ == "__main__":
+    main()
+
+
