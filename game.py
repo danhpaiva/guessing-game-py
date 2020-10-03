@@ -1,6 +1,6 @@
 import os
 import random
-# https://fsymbols.com/generators/carty/
+# link for styles https://fsymbols.com/generators/carty/
 
 
 def introducePlayer():
@@ -26,18 +26,18 @@ def getTipAboutSelectedNumber(randomNumber, selectedNumber):
 
 def searchNumber():
     attemps = 1
-    selectedNumber = input(
-        "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
+
     randomNumber = random.randrange(0, 100)
+
+    selectedNumber = int(input(
+        "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: "))
 
     while selectedNumber != randomNumber:
         os.system("cls")
-        if not selectedNumber.isnumeric():
-            selectedNumber = input(
-                "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: ")
         getTipAboutSelectedNumber(randomNumber, int(selectedNumber))
-        selectedNumber = input("Digite outro número: \n")
+        selectedNumber = int(input("Digite outro número: \n"))
         attemps += 1
+
     print("\nNúmero: " + str(selectedNumber) +
           ", você precisou de " + str(attemps) + " tentativas.")
 
