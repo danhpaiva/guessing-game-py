@@ -2,10 +2,17 @@ import os
 import random
 
 
-def introducePlayer(playerName):
+def introducePlayer():
     os.system("cls")
-    print("Jogo de Adivinhação\n")
-    print(playerName + " estamos sorteando o número... Número sorteado!!!")
+    print(r"""
+    ░██████╗░██╗░░░██╗███████╗███████╗░██████╗██╗███╗░░██╗░██████╗░  ░██████╗░░█████╗░███╗░░░███╗███████╗
+    ██╔════╝░██║░░░██║██╔════╝██╔════╝██╔════╝██║████╗░██║██╔════╝░  ██╔════╝░██╔══██╗████╗░████║██╔════╝
+    ██║░░██╗░██║░░░██║█████╗░░█████╗░░╚█████╗░██║██╔██╗██║██║░░██╗░  ██║░░██╗░███████║██╔████╔██║█████╗░░
+    ██║░░╚██╗██║░░░██║██╔══╝░░██╔══╝░░░╚═══██╗██║██║╚████║██║░░╚██╗  ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░
+    ╚██████╔╝╚██████╔╝███████╗███████╗██████╔╝██║██║░╚███║╚██████╔╝  ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗
+    ░╚═════╝░░╚═════╝░╚══════╝╚══════╝╚═════╝░╚═╝╚═╝░░╚══╝░╚═════╝░  ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝
+    """)
+    print(input("Primeiro, nos diga seu nome: ") + " estamos sorteando o número... Número sorteado!!!")
 
 def getTipAboutSelectedNumber(randomNumber, selectedNumber):
     if randomNumber > selectedNumber:
@@ -28,7 +35,7 @@ def searchNumber():
     print("\nNúmero: " + str(selectedNumber) + ", você precisou de " + str(attemps) + " tentativas.")
 
 def main():
-    introducePlayer(input("Primeiro, nos diga seu nome: "))
+    introducePlayer()
     searchNumber()
 
 if __name__ == "__main__":
