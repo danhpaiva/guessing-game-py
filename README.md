@@ -8,6 +8,12 @@
 
 O jogo consiste em tentar adivinhar qual o número foi sorteado pela máquina.
 
+## Bibliotecas utilizadas
+- os
+Essa biblioteca fornece dúzias de funções para interagir com o sistema operacional
+- random
+Essa biblioteca oferece métodos para gerar números aleatórios, embaralhar listas e sortear item de sequências.
+
 ## :computer: Ferramentas utilizadas:
 
 - IDE: Visual Studio Code <br>
