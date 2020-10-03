@@ -30,7 +30,7 @@ def searchNumber():
     randomNumber = random.randrange(0, 100)
 
     selectedNumber = int(input(
-        "Digite um número para tentar adivinhar qual número foi sorteado por nossa máquina: "))
+        "\nDigite um número para tentar adivinhar qual número foi sorteado por nossa máquina: "))
 
     while selectedNumber != randomNumber:
         os.system("cls")
@@ -38,8 +38,15 @@ def searchNumber():
         selectedNumber = int(input("Digite outro número: \n"))
         attemps += 1
 
+    os.system('cls')
     print("\nNúmero: " + str(selectedNumber) +
           ", você precisou de " + str(attemps) + " tentativas.")
+
+    retry = int(input('Gostaria de sortear um novo número: [1]Sim [2]Não'))
+    if retry == 1:
+        searchNumber()
+    else:
+        print('\nAté a próxima!')
 
 
 def main():
