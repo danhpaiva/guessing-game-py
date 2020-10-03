@@ -3,7 +3,7 @@
 ## :snake: Descrição
 
 <p align="center">
-  <img src="https://i.imgur.com/TLRCbVr.png">
+  <img src="https://i.imgur.com/X6y7Jsj.png">
 </p>
 
 O jogo consiste em tentar adivinhar qual o número foi sorteado pela máquina.
