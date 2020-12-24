@@ -14,7 +14,7 @@ O jogo consiste em tentar adivinhar qual o número foi sorteado pela máquina.
 - random
 <br>Essa biblioteca oferece métodos para gerar números aleatórios, embaralhar listas e sortear item de sequências.
 
-## :computer: Ferramentas utilizadas:
+## :toolbox: Ferramentas utilizadas:
 
 - IDE: Visual Studio Code <br>
 - Python Extension (ms-python.python)
